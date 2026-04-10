@@ -1,23 +1,23 @@
 <?php
 $nomeProduto = "Cadeira Gamer";
 $precoUnitario = 699.00;
-$quantidade = 10;
-$desconto = 0.15;
+$quantidade = 3;
+$desconto = 0.10;
 $subtotal = $precoUnitario * $quantidade;
 $valorDesconto = $subtotal * $desconto;
 $valorFinal = $subtotal - $valorDesconto;
 $valorFinalFormatado = number_format($valorFinal,2,'.','');
 
 
-echo "Produto: $nomeProduto | Quantidade: $quantidade | Valor Final: R$ $valorFinalFormatado<br>";
+echo "Produto: $nomeProduto<br> Quantidade: $quantidade<br> Valor Final: R$ $valorFinalFormatado<br>";
 
 if ($quantidade == 0){
-    echo "<br>Status: Produto esgotado!<br>";
+    echo "<br>Status: Produto Esgotado!<br>";
 } else if ($quantidade > 0 && $quantidade <= 5) {
-    echo "<br>Status: Estoque crítico! Acionar fornecedor<br>";
+    echo "<br>Status: Estoque Crítico! Acionar fornecedor.<br>";
 
 } else {
-    echo "<br>Status: Estoque Normal<br>";
+    echo "<br>Status: Estoque Normal.<br>";
 }
 
 if ($valorFinal > 1000.00){
@@ -29,7 +29,7 @@ array($categorias = ["Eletrônicos", "Móveis", "Informática", "Games", "Livros
 //var_dump($categorias);
 
 foreach ($categorias as $categoria) {
-    echo "<br>Categoria disponível: $categoria";
+    echo "<br>Categoria disponível: $categoria.";
 }
 
 $estado = "MG";
@@ -42,7 +42,7 @@ if ($estado == "SP"){
     $frete = 50.00;
 }
 
-echo "<br><br> Para o estado $estado, o valor do frete é R$ $frete.<br>";
+echo "<br><br> Para o estado $estado, o valor do frete é R$ $frete.";
 
 array($notas_aluno = [7.5, 8.0, 6.5]);
 $soma = $notas_aluno[0]+$notas_aluno[1] + $notas_aluno[2];
