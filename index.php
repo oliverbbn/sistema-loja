@@ -6,32 +6,33 @@ $desconto = 0.15;
 $subtotal = $precoUnitario * $quantidade;
 $valorDesconto = $subtotal * $desconto;
 $valorFinal = $subtotal - $valorDesconto;
+$valorFinalFormatado = number_format($valorFinal,2,'.','');
 
 
-echo "Produto: $nomeProduto | Quantidade: $quantidade | Valor Final: R$ $valorFinal";
+echo "Produto: $nomeProduto | Quantidade: $quantidade | Valor Final: R$ $valorFinalFormatado<br>";
 
 if ($quantidade == 0){
-    echo "<br>Status: Produto esgotado!";
+    echo "<br>Status: Produto esgotado!<br>";
 } else if ($quantidade > 0 && $quantidade <= 5) {
-    echo "<br>Status: Estoque crítico! Acionar fornecedor";
+    echo "<br>Status: Estoque crítico! Acionar fornecedor<br>";
 
 } else {
-    echo "<br>Status: Estoque Normal";
+    echo "<br>Status: Estoque Normal<br>";
 }
 
 if ($valorFinal > 1000.00){
-    echo "<br>Aviso: Venda de Alto Valor. Aplicar brinde especial na embalagem.<br>";
+    echo "<br>Aviso: Venda de Alto Valor!<br>Aplicar brinde especial na embalagem.<br>";
 }
 
-array($categorias = ["<br>Eletrônicos", "Móveis", "Informática", "Games", "Livros"]);
+array($categorias = ["Eletrônicos", "Móveis", "Informática", "Games", "Livros"]);
 
 //var_dump($categorias);
 
 foreach ($categorias as $categoria) {
-    echo "<br>Categoria disponível: $categoria<br>";
+    echo "<br>Categoria disponível: $categoria";
 }
 
-$estado = "AM";
+$estado = "MG";
 
 if ($estado == "SP"){
     $frete = 15.00;
